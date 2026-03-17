@@ -1,0 +1,73 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ================= MEDIA ACCESS ================= -->
+
+    <!-- Android 12 and below -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:node="merge" />
+
+    <!-- Android 9 and below -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29"
+        tools:node="merge" />
+
+    <!-- Android 13+ -->
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:node="merge" />
+
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_VIDEO"
+        tools:node="merge" />
+
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_AUDIO"
+        tools:node="merge" />
+
+    <!-- ================= CAMERA ================= -->
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        tools:node="merge" />
+
+    <!-- ================= AUDIO ================= -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO"
+        tools:node="merge" />
+
+    <!-- ================= NETWORK ================= -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="merge" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="merge" />
+
+    <!-- Needed for photo location metadata -->
+    <uses-permission
+        android:name="android.permission.ACCESS_MEDIA_LOCATION"
+        tools:node="merge" />
+
+    <!-- ================= FILE PROVIDER FOR CAMERA ================= -->
+
+    <application>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
+    </application>
+
+</manifest>
