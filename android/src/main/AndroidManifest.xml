@@ -51,7 +51,8 @@
     <uses-permission
         android:name="android.permission.ACCESS_MEDIA_LOCATION"
         tools:node="merge" />
-
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    tools:ignore="ScopedStorage" />
     <!-- ================= FILE PROVIDER FOR CAMERA ================= -->
 
     <application>
